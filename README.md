@@ -7,12 +7,21 @@ Based netty-4.0.23.Final + spring build the push server platform！Already throu
 
 Before you start ,must choose an oracle database for your server,and import the SQL script. Other database is developing!You can develop it yourself with your own database,only create a Java File in server project，in the package：com.netty.push.dao，and used another spring annotate for @Service("your named")。
 
+
+==========================COMPILE & BUILD NETTY SERVER================================
+
+You can used ant to compile & build the Netty Server,the build.xml is created in the root folder.
+If your computer is  Windows Operating System you can run start.bat with the Ant Environment is configed.Last will create two jars：netty_push_server.jar & netty_server_sdk.jar in the jar folder。
+
+
 ==========================NETTY SERVER PUBLISH================================
+
 start netty push server:  java -jar netty_push_server.jar spring-context.xml。
 Must be current folder contans libs sub folder where contans the libs's jars
 
 
 ==========================JAVA SERVER SDK================================
+
 jar/netty_server_sdk.jar:which is the Java Server SDK。Used the com.netty.push.sdk.client.NettyClient class create connection to the netty server。
 
 
