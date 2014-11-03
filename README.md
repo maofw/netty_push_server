@@ -1,9 +1,9 @@
 netty_pusher
 ============
 
-netty pusher framework，Currently It cantans server(SQL script) 、Java SDK and Android SDK 。The iOS SDK is developing!
+netty pusher framework，Currently It contans Netty Server (SQL script) 、Java SDK and Android SDK 。The iOS SDK is developing!
 
-Based netty-4.0.23.Final + spring build the push server platform！Already through simple test，and it is worked good。You can used Java SDK in your owner server,and it get from the jar fold.Also you can used Android SDK for your mobile development,it used very easy and simple！
+Based netty-4.0.23.Final + spring build the push server platform！Already through simple test，and it work's good。You can used Java SDK in your owner server,it will get from the jar folder . Also you can used Android SDK for your mobile development,it used very easy and simple！You can get it from the anetty_client project!
 
 Before you start ,must choose an oracle database for your server,and import the SQL script. Other database is developing!You can develop it yourself with your own database,only create a Java File in server project，in the package：com.netty.push.dao，and used another spring annotate for @Service("your named")。
 
