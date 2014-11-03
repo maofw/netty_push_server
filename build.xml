@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="monitor_push" default="build" basedir=".">
+	<property name="src" value="src" />
+	<property name="lib" value="libs" />
+	<property name="dest" value="bin" />
+	<property name="jar" value="jar" />
+	<property name="jar_name" value="netty_push_server.jar" />
+	<property name="sdk_name" value="netty_server_sdk.jar" />
+	<path id="third_jar">
+		<fileset dir="${lib}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+	<target name="compile" depends="clean,init">
+		<javac srcdir="${src}" destdir="${dest}" encoding="UTF-8">
+			<classpath refid="third_jar" />
+		</javac>
+		<copy todir="${dest}">
+			<fileset dir="${src}">
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+	</target>
+	<target name="build" depends="compile">
+	    <jar jarfile="${jar}/${jar_name}" basedir="${dest}" manifest="META-INF/MANIFEST.MF"
+			excludes="com/netty/push/sdk/client/**" />
+	    
+	    <unzip src="${lib}/netty-all-4.0.23.Final.jar" dest="${dest}">  
+	      <patternset>  
+		      <exclude name="META-INF"/>  
+		      <exclude name="META-INF/MANIFEST.MF"/>  
+	      </patternset>  
+		</unzip>  		
+		<jar jarfile="${jar}/${sdk_name}" basedir="${dest}"
+			includes="com/netty/push/sdk/client/**,com/netty/push/sdk/pojo/**,io/netty/handler/codec/serialization/**,io/netty/util/**,io/netty/bootstrap/**,io/netty/channel/**,io/netty/buffer/**,io/netty/handler/codec/*.class" />
+		
+	</target>
+	<target name="clean">
+		<delete dir="${jar}" />
+		<delete dir="${dest}" />
+		<delete file="${jar}/${jar_name}" />
+	</target>
+	<target name="init">
+		<mkdir dir="${dest}" />
+		<mkdir dir="${jar}" />
+	</target>
+</project> 

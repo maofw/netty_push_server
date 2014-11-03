@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="com/xwtec/monitorpush/pojo/ChannelDevice.java|com/xwtec/monitorpush/pojo/MessageDeviceInfo.java" kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="libs/protobuf-java-2.5.0.jar"/>
+	<classpathentry kind="lib" path="libs/monitor_protoc.jar"/>
+	<classpathentry kind="lib" path="libs/spring.jar"/>
+	<classpathentry kind="lib" path="libs/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="libs/c3p0-0.9.1.2.jar"/>
+	<classpathentry kind="lib" path="libs/oracle10g_10.2.0.1.0_jdk14.jar"/>
+	<classpathentry kind="lib" path="libs/netty-all-4.0.23.Final.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

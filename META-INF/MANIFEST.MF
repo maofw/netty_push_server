@@ -1,0 +1,4 @@
+Manifest-Version: 1.0  
+Built-By: maofw
+Main-Class: com.xwtec.monitorpush.Application
+Class-Path: . libs/commons-logging-1.1.1.jar libs/c3p0-0.9.1.2.jar libs/monitor_protoc.jar libs/netty-all-4.0.23.Final.jar libs/oracle10g_10.2.0.1.0_jdk14.jar libs/protobuf-java-2.5.0.jar libs/spring.jar
