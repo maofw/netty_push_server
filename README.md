@@ -3,7 +3,7 @@ Netty Push Server
 
 The Netty Push Server Framework contains Netty Server (SQL script) 、Java SDK and Android SDK 。The iOS SDK is developing!
 
-Based Netty-4.0.23.Final + Spring build the Netty Push Server Framework！Already through simple test，and it work's good。You can used Java SDK in your owner server,it will get from the jar folder . Also you can used Android SDK for your mobile development,it used very easy and simple！You can get it from the anetty_client project!
+Based Netty-4.0.23.Final + Spring build the Netty Push Server Framework！Already through simple test，and it work's good。You can use Java SDK in your owner server,it will get from the jar folder . Also you can use Android SDK for your mobile development,it used very easy and simple！You can get it from the anetty_client project!
 
 Before you start ,must choose an oracle database for your server,and import the SQL script. Other database is developing!You can develop it yourself with your own database,only create a Java File in server project，in the package：com.netty.push.dao，and used another spring annotate for @Service("your named")。
 
