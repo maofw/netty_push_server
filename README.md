@@ -11,13 +11,17 @@ Before you start ,must choose an oracle database for your server,and import the 
 COMPILE & BUILD
 
 You can used ant to compile & build the Netty Server,the build.xml is created in the root folder. If your computer is Windows Operating System you can run start.bat with the Ant Environment is configed.Last will create two jars：netty_push_server.jar & netty_server_sdk.jar in the jar folder。
+
 netty_push_server.jar——The Push Server Library .That You can put in your self Web Project with support spring,and must load sping-context.xml in the web.xml。
+
 netty_server_sdk.jar ——Your Server SDK Library .You can import the jar in your self project to send push message!
 
 HOW TO START?
 
 There are two kinds of methods：
+
 1.Use nettyServer.start()  to run the push server in a suitable place of your project. For example：In the Application ServletContextListener. The nettyServer defined in spring-context.xml.
+
 2.Use command line： java -jar netty_push_server.jar spring-context.xml to run the push server independent startup.
 Above all , you must ensure that contains the  libs's jars in the classpath！
 
