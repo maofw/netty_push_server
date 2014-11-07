@@ -533,6 +533,7 @@ public class ApplicationContext {
 			}
 			if (deviceInfo == null) {
 				deviceInfo = new DeviceInfo();
+				channelDeviceInfo.setDeviceInfo(deviceInfo);
 			}
 			// 设置设备信息内容
 			channelDeviceInfo.setDeviceInfo(deviceInfo);
@@ -646,6 +647,8 @@ public class ApplicationContext {
 				System.out.println("DEVICE OFFLINE:" + deviceId + (deviceInfo == null ? "" : ("-" + deviceInfo.getImei())));
 				return true;
 			}
+			System.out.println("DEVICE ALREADY OFFLINE:" + deviceId );
+			return true;
 		}
 		return false;
 	}
@@ -657,8 +660,12 @@ public class ApplicationContext {
 	 * @return
 	 */
 	public boolean offline(Channel channel) {
+		System.out.print("OFFLINE:channel="+channel);
 		if (channel != null) {
+			System.out.print("-channelInfos="+channelInfos);
 			ChannelInfo channelInfo = channelInfos.get(channel);
+			System.out.print("-channelInfo="+channelInfo);
+			System.out.println("-device size="+((channelInfo==null||channelInfo.getChannelDeviceInfos() ==null)?0:channelInfo.getChannelDeviceInfos().size()));
 			if (channelInfo != null && channelInfo.getChannelDeviceInfos() != null && channelInfo.getChannelDeviceInfos().size() > 0) {
 				List<DeviceInfo> deviceInfos = new ArrayList<DeviceInfo>();
 				List<ChannelDeviceInfo> channelDeviceInfos = channelInfo.getChannelDeviceInfos();
@@ -680,9 +687,10 @@ public class ApplicationContext {
 				channelInfo.getChannelDeviceInfos().removeAll(channelDeviceInfos);
 			}
 			channelInfos.remove(channel);
-			channel.close().addListener(ChannelFutureListener.CLOSE);
+			channel.close().addListener(ChannelFutureListener.CLOSE);			
 			return true;
 		}
+		System.out.println("-end");
 		return false;
 	}
 

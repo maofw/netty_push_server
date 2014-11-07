@@ -23,7 +23,7 @@
 	<context:annotation-config />
 
 	<!--扫描Service -->
-	<context:component-scan base-package="com.xwtec.monitorpush" />
+	<context:component-scan base-package="com.netty.push" />
 
 
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
@@ -62,7 +62,7 @@
 	</bean>  
 
 	<!--NettyServer -->
-	<bean id="nettyServer" class="com.xwtec.monitorpush.server.NettyServer">
+	<bean id="nettyServer" class="com.netty.push.server.NettyServer">
 		<property name="port" value="${server.port}" />
 		<property name="serverIpConfig">
 			<value>${sdk.ip1}</value>
@@ -70,19 +70,19 @@
 	</bean>
 
 	<!--外部SDK处理接口 MessageHandler -->
-	<bean id="messageHandler" class="com.xwtec.monitorpush.sdk.server.MessageHandler">
+	<bean id="messageHandler" class="com.netty.push.sdk.server.MessageHandler">
 		<property name="endTimesInMillis" value="${sdk.message.endTimesInMillis}" />
 		<property name="expireTimes" value="${sdk.message.expireTimes}" />
 	</bean>
 
 	<!-- 数据初始化任务 -->
-	<bean id="applicationInitTask" class="com.xwtec.monitorpush.task.ApplicationInitTask">
+	<bean id="applicationInitTask" class="com.netty.push.task.ApplicationInitTask">
 	</bean>
 	<!-- 消息轮训任务 -->
-	<bean id="messageLoopTask" class="com.xwtec.monitorpush.task.MessageLoopTask">
+	<bean id="messageLoopTask" class="com.netty.push.task.MessageLoopTask">
 	</bean>
 	<!-- 设备状态监控任务 -->
-	<bean id="deviceMonitorTask" class="com.xwtec.monitorpush.task.DeviceMonitorTask">
+	<bean id="deviceMonitorTask" class="com.netty.push.task.DeviceMonitorTask">
 		<property name="timeout" value="${deviceOnlineTimeout}" />
 	</bean>
 
